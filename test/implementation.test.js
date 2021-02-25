@@ -17,6 +17,7 @@ import {
   circularArrayRotation,
   permutationEquation,
   migratoryBirds,
+  findDigits,
 } from "../src/implementation/implementation";
 
 import chai from "chai";
@@ -187,4 +188,10 @@ test("Migratory Birds", () => {
   expect(migratoryBirds).to.be.a("function");
   expect(migratoryBirds([1, 4, 4, 4, 5, 3])).to.eq(4);
   expect(migratoryBirds([1, 2, 3, 4, 5, 4, 3, 2, 1, 3, 4])).to.eq(3);
+});
+
+test("Find Digits", () => {
+  expect(findDigits).to.be.a("function");
+  expect(findDigits(12)).to.eq(2);
+  expect(findDigits(1012)).to.eq(3);
 });
