@@ -1,2 +1,1 @@
-# hackerrank
-HackerRank solutions in JavaScript (⬡.js)
+# HackerRank solutions
