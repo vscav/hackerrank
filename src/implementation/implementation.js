@@ -190,3 +190,103 @@ export const designerPdfViewer = (h, word) => {
 
   return word.length * tallestLetter;
 };
+
+/**
+ * Utopian Tree
+ * Problem link: https://www.hackerrank.com/challenges/utopian-tree/problem
+ */
+
+export const utopianTree = (n) => {
+  let height = 1;
+  for (let i = 0; i < n; i++) {
+    height = i % 2 === 0 ? height * 2 : height + 1;
+  }
+  return height;
+};
+
+/**
+ * Angry Professor
+ * Problem link: https://www.hackerrank.com/challenges/angry-professor/problem
+ */
+
+export const angryProfessor = (k, a) => {
+  for (let i = a.length; i-- > 0; ) {
+    if (a[i] <= 0) {
+      --k;
+    }
+  }
+
+  return k <= 0 ? "NO" : "YES";
+};
+
+/**
+ * Beautiful Days at the Movies
+ * Problem link: https://www.hackerrank.com/challenges/beautiful-days-at-the-movies/problem
+ */
+
+export const beautifulDays = (i, j, k) => {
+  const numberedDays = [];
+  for (let l = i; l <= j; l++) {
+    numberedDays.push(l);
+  }
+
+  const reverse = (num) =>
+    parseInt(String(num).split("").reverse().join(""), 10);
+
+  return numberedDays
+    .map((numberedDay) => numberedDay - reverse(numberedDay))
+    .filter((numberedDay) => Number.isInteger(numberedDay / k)).length;
+};
+
+/**
+ * Viral Advertising
+ * Problem link: https://www.hackerrank.com/challenges/strange-advertising/problem
+ */
+
+export const viralAdvertising = (n) => {
+  let shared = 5;
+  let liked = 0;
+  let cumulative = 0;
+
+  for (let i = 0; i < n; i++) {
+    liked = Math.floor(shared / 2);
+    shared = liked * 3;
+    cumulative += liked;
+  }
+
+  return cumulative;
+};
+
+/**
+ * Save the Prisoner!
+ * Problem link: https://www.hackerrank.com/challenges/save-the-prisoner/problem
+ */
+
+export const saveThePrisoner = (n, m, s) => {
+  return (m - 1 + s) % n || n;
+};
+
+/**
+ * Circular Array Rotation
+ * Problem link: https://www.hackerrank.com/challenges/circular-array-rotation/problem
+ */
+
+export const circularArrayRotation = (a, k, queries) => {
+  Array.from({ length: k }).forEach(() => a.unshift(a.pop()));
+  return queries.map((query) => a[query]);
+};
+
+/**
+ * Sequence Equation
+ * Problem link: https://www.hackerrank.com/challenges/permutation-equation/problem
+ */
+
+export const permutationEquation = (p) => {
+  let permutationEquationSequence = [];
+
+  for (let i = 1; i <= p.length; i++) {
+    permutationEquationSequence.push(p.indexOf(p.indexOf(i) + 1) + 1);
+  }
+
+  return permutationEquationSequence;
+};

@@ -9,6 +9,13 @@ import {
   catAndMouse,
   hurdleRace,
   designerPdfViewer,
+  utopianTree,
+  angryProfessor,
+  beautifulDays,
+  viralAdvertising,
+  saveThePrisoner,
+  circularArrayRotation,
+  permutationEquation,
 } from "../src/implementation/implementation";
 
 import chai from "chai";
@@ -129,4 +136,48 @@ test("Designer PDF Viewer", () => {
       "zaba"
     )
   ).to.eq(28);
+});
+
+test("Utopian Tree", () => {
+  expect(utopianTree).to.be.a("function");
+  expect(utopianTree(0)).to.eq(1);
+  expect(utopianTree(1)).to.eq(2);
+  expect(utopianTree(2)).to.eq(3);
+  expect(utopianTree(3)).to.eq(6);
+  expect(utopianTree(4)).to.eq(7);
+});
+
+test("Angry Professor", () => {
+  expect(angryProfessor).to.be.a("function");
+  expect(angryProfessor(3, [-1, -3, 4, 2])).to.eq("YES");
+  expect(angryProfessor(2, [0, -1, 2, 1])).to.eq("NO");
+});
+
+test("Beautiful Days at the Movies", () => {
+  expect(beautifulDays).to.be.a("function");
+  expect(beautifulDays(20, 23, 6)).to.eq(2);
+  expect(beautifulDays(13, 45, 3)).to.eq(33);
+});
+
+test("Viral Advertising", () => {
+  expect(viralAdvertising).to.be.a("function");
+  expect(viralAdvertising(3)).to.eq(9);
+  expect(viralAdvertising(4)).to.eq(15);
+});
+
+test("Save the Prisoner!", () => {
+  expect(saveThePrisoner).to.be.a("function");
+  expect(saveThePrisoner(5, 2, 1)).to.eq(2);
+  expect(saveThePrisoner(5, 2, 2)).to.eq(3);
+});
+
+test("Circular Array Rotation", () => {
+  expect(circularArrayRotation).to.be.a("function");
+  expect(circularArrayRotation([1, 2, 3], 2, [0, 1, 2])).to.deep.eq([2, 3, 1]);
+});
+
+test("Sequence Equation", () => {
+  expect(permutationEquation).to.be.a("function");
+  expect(permutationEquation([2, 3, 1])).to.deep.eq([2, 3, 1]);
+  expect(permutationEquation([4, 3, 5, 1, 2])).to.deep.eq([1, 3, 5, 4, 2]);
 });
