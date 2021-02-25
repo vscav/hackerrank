@@ -16,6 +16,7 @@ import {
   saveThePrisoner,
   circularArrayRotation,
   permutationEquation,
+  migratoryBirds,
 } from "../src/implementation/implementation";
 
 import chai from "chai";
@@ -180,4 +181,10 @@ test("Sequence Equation", () => {
   expect(permutationEquation).to.be.a("function");
   expect(permutationEquation([2, 3, 1])).to.deep.eq([2, 3, 1]);
   expect(permutationEquation([4, 3, 5, 1, 2])).to.deep.eq([1, 3, 5, 4, 2]);
+});
+
+test("Migratory Birds", () => {
+  expect(migratoryBirds).to.be.a("function");
+  expect(migratoryBirds([1, 4, 4, 4, 5, 3])).to.eq(4);
+  expect(migratoryBirds([1, 2, 3, 4, 5, 4, 3, 2, 1, 3, 4])).to.eq(3);
 });
