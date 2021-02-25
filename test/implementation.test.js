@@ -4,6 +4,7 @@ import {
   gradingStudents,
   kangaroo,
   breakingRecords,
+  divisibleSumPairs,
 } from "../src/implementation/implementation";
 
 import chai from "chai";
@@ -27,5 +28,13 @@ test("Number Line Jumps", () => {
 test("Breaking the Records", () => {
   expect(breakingRecords).to.be.a("function");
   expect(breakingRecords([10, 5, 20, 20, 4, 5, 2, 25, 1])).to.deep.eq([2, 4]);
-  expect(breakingRecords([3, 4, 21, 36, 10, 28, 35, 5, 24, 42])).to.deep.eq([4, 0]);
+  expect(breakingRecords([3, 4, 21, 36, 10, 28, 35, 5, 24, 42])).to.deep.eq([
+    4,
+    0,
+  ]);
+});
+
+test("Divisible Sum Pairs", () => {
+  expect(divisibleSumPairs).to.be.a("function");
+  expect(divisibleSumPairs(6, 3, [1, 3, 2, 6, 1, 2])).to.eq(5);
 });
