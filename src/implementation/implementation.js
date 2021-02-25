@@ -81,3 +81,112 @@ export const divisibleSumPairs = (n, k, ar) => {
   }
   return res;
 };
+
+/**
+ * Bill Division
+ * Problem link: https://www.hackerrank.com/challenges/bon-appetit/problem
+ */
+
+export const bonAppetit = (bill, k, b) => {
+  let actual = 0,
+    charged = b;
+  if (k >= 0 && k < bill.length) {
+    bill.forEach((value, index) => {
+      if (index != k) actual += value;
+    });
+  }
+  actual = actual / 2;
+  console.log(actual == charged ? "Bon Appetit" : charged - actual);
+};
+
+/**
+ * Electronics Shop
+ * Problem link: hackerrank.com/challenges/electronics-shop/problem
+ */
+
+export const getMoneySpent = (keyboards, drives, b) => {
+  const comparison = (a, b) => a - b;
+  keyboards.sort(comparison);
+  drives.sort(comparison);
+  let res = -1;
+  for (let i = 0; i < keyboards.length; i++) {
+    for (let j = 0; j < drives.length; j++) {
+      const currentPair = keyboards[i] + drives[j];
+      if (currentPair <= b && currentPair > res) res = currentPair;
+    }
+  }
+  return res;
+};
+
+/**
+ * Cats and a Mouse
+ * Problem link: https://www.hackerrank.com/challenges/cats-and-a-mouse/problem
+ */
+
+export const catAndMouse = (x, y, z) => {
+  let a = Math.abs(z - x),
+    b = Math.abs(z - y);
+
+  return a - b == 0 ? "Mouse C" : a < b ? "Cat A" : "Cat B";
+};
+
+/**
+ * The Hurdle Race
+ * Problem link: https://www.hackerrank.com/challenges/the-hurdle-race/problem
+ */
+
+export const hurdleRace = (k, height) => {
+  return Math.max(Math.max(...height) - k, 0);
+};
+
+/**
+ * Designer PDF Viewer
+ * Problem link: https://www.hackerrank.com/challenges/designer-pdf-viewer/problem
+ */
+
+export const designerPdfViewer = (h, word) => {
+  let alphabet = [
+    { key: "a", height: 0 },
+    { key: "b", height: 0 },
+    { key: "c", height: 0 },
+    { key: "d", height: 0 },
+    { key: "e", height: 0 },
+    { key: "f", height: 0 },
+    { key: "g", height: 0 },
+    { key: "h", height: 0 },
+    { key: "i", height: 0 },
+    { key: "j", height: 0 },
+    { key: "k", height: 0 },
+    { key: "l", height: 0 },
+    { key: "m", height: 0 },
+    { key: "n", height: 0 },
+    { key: "o", height: 0 },
+    { key: "p", height: 0 },
+    { key: "q", height: 0 },
+    { key: "r", height: 0 },
+    { key: "s", height: 0 },
+    { key: "t", height: 0 },
+    { key: "u", height: 0 },
+    { key: "v", height: 0 },
+    { key: "w", height: 0 },
+    { key: "x", height: 0 },
+    { key: "y", height: 0 },
+    { key: "z", height: 0 },
+  ];
+
+  alphabet.forEach((letter, i) => {
+    letter.height = h[i];
+  });
+
+  const heightMap = alphabet.reduce((map, obj) => {
+    map[obj.key] = obj.height;
+    return map;
+  }, {});
+
+  let tallestLetter = 0;
+  for (const letter of word) {
+    if (heightMap[letter] > tallestLetter) tallestLetter = heightMap[letter];
+  }
+
+  return word.length * tallestLetter;
+};

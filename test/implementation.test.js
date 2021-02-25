@@ -5,6 +5,10 @@ import {
   kangaroo,
   breakingRecords,
   divisibleSumPairs,
+  getMoneySpent,
+  catAndMouse,
+  hurdleRace,
+  designerPdfViewer,
 } from "../src/implementation/implementation";
 
 import chai from "chai";
@@ -37,4 +41,92 @@ test("Breaking the Records", () => {
 test("Divisible Sum Pairs", () => {
   expect(divisibleSumPairs).to.be.a("function");
   expect(divisibleSumPairs(6, 3, [1, 3, 2, 6, 1, 2])).to.eq(5);
+});
+
+test("Electronics Shop", () => {
+  expect(getMoneySpent).to.be.a("function");
+  expect(getMoneySpent([3, 1], [5, 2, 8], 10)).to.eq(9);
+  expect(getMoneySpent([4], [5], 5)).to.eq(-1);
+});
+
+test("Cats and a Mouse", () => {
+  expect(catAndMouse).to.be.a("function");
+  expect(catAndMouse(1, 2, 3)).to.eq("Cat B");
+  expect(catAndMouse(1, 3, 2)).to.eq("Mouse C");
+});
+
+test("The Hurdle Race", () => {
+  expect(hurdleRace).to.be.a("function");
+  expect(hurdleRace(4, [1, 6, 3, 5, 2])).to.eq(2);
+  expect(hurdleRace(7, [2, 5, 4, 5, 2])).to.eq(0);
+});
+
+test("Designer PDF Viewer", () => {
+  expect(designerPdfViewer).to.be.a("function");
+  expect(
+    designerPdfViewer(
+      [
+        1,
+        3,
+        1,
+        3,
+        1,
+        4,
+        1,
+        3,
+        2,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+      ],
+      "abc"
+    )
+  ).to.eq(9);
+  expect(
+    designerPdfViewer(
+      [
+        1,
+        3,
+        1,
+        3,
+        1,
+        4,
+        1,
+        3,
+        2,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        7,
+      ],
+      "zaba"
+    )
+  ).to.eq(28);
 });
