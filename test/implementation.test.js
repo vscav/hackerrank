@@ -21,6 +21,7 @@ import {
   equalizeArray,
   birthday,
   sockMerchant,
+  pageCount,
 } from "../src/implementation/implementation";
 
 import chai from "chai";
@@ -217,4 +218,10 @@ test("Sales by Match", () => {
   expect(sockMerchant(9, [10, 20, 20, 10, 10, 30, 50, 10, 20])).to.eq(3);
   expect(sockMerchant(10, [1, 1, 3, 1, 2, 1, 3, 3, 3, 3])).to.eq(4);
   expect(sockMerchant(1, [9])).to.eq(0);
+});
+
+test("Drawing Book", () => {
+  expect(pageCount).to.be.a("function");
+  expect(pageCount(6, 2)).to.eq(1);
+  expect(pageCount(5, 4)).to.eq(0);
 });

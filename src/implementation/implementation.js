@@ -389,20 +389,25 @@ export const birthday = (s, d, m) => {
  */
 
 export const sockMerchant = (n, ar) => {
-  const countOccurrences = (arr, val) =>
-    arr.reduce((a, v) => (v === val ? a + 1 : a), 0);
-
   let pairs = 0;
 
   while (ar.length > 0) {
-    const item = countOccurrences(ar, ar[0]);
-    const socksOfTypeArray = ar.filter((sock) => sock === ar[0]);
+    const typedSocksArray = ar.filter((sock) => sock === ar[0]);
     ar = ar.filter((sock) => sock !== ar[0]);
-    if (socksOfTypeArray.length > 1)
-      if (socksOfTypeArray.length % 2 === 0)
-        pairs += socksOfTypeArray.length / 2;
-      else pairs += (socksOfTypeArray.length - 1) / 2;
+    if (typedSocksArray.length > 1)
+      if (typedSocksArray.length % 2 === 0) pairs += typedSocksArray.length / 2;
+      else pairs += (typedSocksArray.length - 1) / 2;
   }
 
   return pairs;
+};
+
+/**
+ * Drawing Book
+ * Problem link: https://www.hackerrank.com/challenges/drawing-book/problem
+ */
+
+export const pageCount = (n, p) => {
+  let d = (n % 2 == 0 ? ++n : n) - p;
+  return Math.floor((d > n / 2 ? p : d) / 2);
 };
