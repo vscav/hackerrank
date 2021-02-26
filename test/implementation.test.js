@@ -19,6 +19,7 @@ import {
   migratoryBirds,
   findDigits,
   equalizeArray,
+  birthday,
 } from "../src/implementation/implementation";
 
 import chai from "chai";
@@ -201,4 +202,11 @@ test("Equalize the Array", () => {
   expect(equalizeArray).to.be.a("function");
   expect(equalizeArray([3, 3, 2, 1, 3])).to.eq(2);
   expect(equalizeArray([1, 2, 3, 1, 2, 3, 3, 3])).to.eq(4);
+});
+
+test("Subarray Division", () => {
+  expect(birthday).to.be.a("function");
+  expect(birthday([1, 2, 1, 3, 2], 3, 2)).to.eq(2);
+  expect(birthday([1, 1, 1, 1, 1, 1], 3, 2)).to.eq(0);
+  expect(birthday([4], 4, 1)).to.eq(1);
 });

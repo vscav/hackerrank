@@ -366,3 +366,19 @@ export const equalizeArray = (arr) => {
 
   return arr.length - equalArr.length;
 };
+
+/**
+ * Subarray Division
+ * Problem link: https://www.hackerrank.com/challenges/the-birthday-bar/problem
+ */
+
+export const birthday = (s, d, m) => {
+  let matches = 0;
+  for (let i = 0; i < s.length; i++) {
+    let sum = 0;
+    const slice = s.slice(i, i + m);
+    sum = slice.reduce((acc, val) => acc + val);
+    if (sum === d && slice.length === m) matches += 1;
+  }
+  return matches;
+};
