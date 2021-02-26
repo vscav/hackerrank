@@ -18,6 +18,7 @@ import {
   permutationEquation,
   migratoryBirds,
   findDigits,
+  equalizeArray,
 } from "../src/implementation/implementation";
 
 import chai from "chai";
@@ -194,4 +195,10 @@ test("Find Digits", () => {
   expect(findDigits).to.be.a("function");
   expect(findDigits(12)).to.eq(2);
   expect(findDigits(1012)).to.eq(3);
+});
+
+test("Equalize the Array", () => {
+  expect(equalizeArray).to.be.a("function");
+  expect(equalizeArray([3, 3, 2, 1, 3])).to.eq(2);
+  expect(equalizeArray([1, 2, 3, 1, 2, 3, 3, 3])).to.eq(4);
 });
