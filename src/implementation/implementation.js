@@ -377,8 +377,32 @@ export const birthday = (s, d, m) => {
   for (let i = 0; i < s.length; i++) {
     let sum = 0;
     const slice = s.slice(i, i + m);
-    sum = slice.reduce((acc, val) => acc + val);
+    sum = slice.reduce((a, v) => a + v);
     if (sum === d && slice.length === m) matches += 1;
   }
   return matches;
+};
+
+/**
+ * Sales by Match
+ * Problem link: https://www.hackerrank.com/challenges/sock-merchant/problem
+ */
+
+export const sockMerchant = (n, ar) => {
+  const countOccurrences = (arr, val) =>
+    arr.reduce((a, v) => (v === val ? a + 1 : a), 0);
+
+  let pairs = 0;
+
+  while (ar.length > 0) {
+    const item = countOccurrences(ar, ar[0]);
+    const socksOfTypeArray = ar.filter((sock) => sock === ar[0]);
+    ar = ar.filter((sock) => sock !== ar[0]);
+    if (socksOfTypeArray.length > 1)
+      if (socksOfTypeArray.length % 2 === 0)
+        pairs += socksOfTypeArray.length / 2;
+      else pairs += (socksOfTypeArray.length - 1) / 2;
+  }
+
+  return pairs;
 };

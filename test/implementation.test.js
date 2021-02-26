@@ -20,6 +20,7 @@ import {
   findDigits,
   equalizeArray,
   birthday,
+  sockMerchant,
 } from "../src/implementation/implementation";
 
 import chai from "chai";
@@ -209,4 +210,11 @@ test("Subarray Division", () => {
   expect(birthday([1, 2, 1, 3, 2], 3, 2)).to.eq(2);
   expect(birthday([1, 1, 1, 1, 1, 1], 3, 2)).to.eq(0);
   expect(birthday([4], 4, 1)).to.eq(1);
+});
+
+test("Sales by Match", () => {
+  expect(sockMerchant).to.be.a("function");
+  expect(sockMerchant(9, [10, 20, 20, 10, 10, 30, 50, 10, 20])).to.eq(3);
+  expect(sockMerchant(10, [1, 1, 3, 1, 2, 1, 3, 3, 3, 3])).to.eq(4);
+  expect(sockMerchant(1, [9])).to.eq(0);
 });
