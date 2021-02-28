@@ -23,6 +23,7 @@ import {
   sockMerchant,
   pageCount,
   jumpingOnClouds,
+  libraryFine,
 } from "../src/implementation/implementation";
 
 import chai from "chai";
@@ -231,4 +232,9 @@ test("Jumping on the Clouds: Revisited", () => {
   expect(jumpingOnClouds).to.be.a("function");
   expect(jumpingOnClouds([0, 0, 1, 0, 0, 1, 1, 0], 2)).to.eq(92);
   expect(jumpingOnClouds([1, 1, 1, 0, 1, 1, 0, 0, 0, 0], 3)).to.eq(80);
+});
+
+test("Library Fine", () => {
+  expect(libraryFine).to.be.a("function");
+  expect(libraryFine(9, 6, 2015, 6, 6, 2015)).to.eq(45);
 });
