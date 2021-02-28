@@ -22,6 +22,7 @@ import {
   birthday,
   sockMerchant,
   pageCount,
+  jumpingOnClouds,
 } from "../src/implementation/implementation";
 
 import chai from "chai";
@@ -224,4 +225,10 @@ test("Drawing Book", () => {
   expect(pageCount).to.be.a("function");
   expect(pageCount(6, 2)).to.eq(1);
   expect(pageCount(5, 4)).to.eq(0);
+});
+
+test("Jumping on the Clouds: Revisited", () => {
+  expect(jumpingOnClouds).to.be.a("function");
+  expect(jumpingOnClouds([0, 0, 1, 0, 0, 1, 1, 0], 2)).to.eq(92);
+  expect(jumpingOnClouds([1, 1, 1, 0, 1, 1, 0, 0, 0, 0], 3)).to.eq(80);
 });
