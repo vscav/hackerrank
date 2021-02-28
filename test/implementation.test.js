@@ -24,6 +24,7 @@ import {
   pageCount,
   jumpingOnClouds,
   libraryFine,
+  minimumDistances,
 } from "../src/implementation/implementation";
 
 import chai from "chai";
@@ -237,4 +238,10 @@ test("Jumping on the Clouds: Revisited", () => {
 test("Library Fine", () => {
   expect(libraryFine).to.be.a("function");
   expect(libraryFine(9, 6, 2015, 6, 6, 2015)).to.eq(45);
+});
+
+test("Minimum Distances", () => {
+  expect(minimumDistances).to.be.a("function");
+  expect(minimumDistances([7, 1, 3, 4, 1, 7])).to.eq(3);
+  expect(minimumDistances([1, 2, 3, 4, 10])).to.eq(-1);
 });
