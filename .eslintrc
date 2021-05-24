@@ -39,7 +39,11 @@
     "quotes": "warn",
     "valid-typeof": "warn",
     "fp/no-unused-expression": "off",
-    "fp/no-nil": "off"
+    "fp/no-nil": "off",
+    "fp/no-mutation": "off",
+    "fp/no-loops": "off",
+    "fp/no-let": "off",
+    "fp/no-mutating-methods": "off"
   },
 
   "extends": ["standard", "plugin:fp/recommended"]
