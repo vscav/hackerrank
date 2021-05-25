@@ -25,7 +25,8 @@ import {
   jumpingOnClouds,
   libraryFine,
   minimumDistances,
-  encryption
+  encryption,
+  kaprekarNumbers
 } from '../src/implementation/implementation'
 
 import chai from 'chai'
@@ -252,4 +253,10 @@ test('Encryption', () => {
   expect(encryption('haveaniceday')).to.eq('hae and via ecy')
   expect(encryption('feedthedog')).to.eq('fto ehg ee dd')
   expect(encryption('chillout')).to.eq('clu hlt io')
+})
+
+test('Modified Kaprekar Numbers', () => {
+  expect(kaprekarNumbers).to.be.a('function')
+  // expect(kaprekarNumbers(1, 100)).to.eq('1 9 45 55 99')
+  expect(kaprekarNumbers(100, 300)).to.eq('297')
 })
