@@ -26,7 +26,8 @@ import {
   libraryFine,
   minimumDistances,
   encryption,
-  kaprekarNumbers
+  kaprekarNumbers,
+  camelcase
 } from '../src/implementation/implementation'
 
 import chai from 'chai'
@@ -257,6 +258,11 @@ test('Encryption', () => {
 
 test('Modified Kaprekar Numbers', () => {
   expect(kaprekarNumbers).to.be.a('function')
-  // expect(kaprekarNumbers(1, 100)).to.eq('1 9 45 55 99')
+  expect(kaprekarNumbers(1, 100)).to.eq('1 9 45 55 99')
   expect(kaprekarNumbers(100, 300)).to.eq('297')
+})
+
+test('CamelCase', () => {
+  expect(camelcase).to.be.a('function')
+  expect(camelcase('saveChangesInTheEditor')).to.eq(5)
 })
