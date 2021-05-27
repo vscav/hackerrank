@@ -27,7 +27,8 @@ import {
   minimumDistances,
   encryption,
   kaprekarNumbers,
-  camelcase
+  camelcase,
+  superReducedString
 } from '../src/implementation/implementation'
 
 import chai from 'chai'
@@ -265,4 +266,11 @@ test('Modified Kaprekar Numbers', () => {
 test('CamelCase', () => {
   expect(camelcase).to.be.a('function')
   expect(camelcase('saveChangesInTheEditor')).to.eq(5)
+})
+
+test('Super reduced string', () => {
+  expect(superReducedString).to.be.a('function')
+  expect(superReducedString('aaabccddd')).to.eq('abd')
+  expect(superReducedString('aa')).to.eq('Empty String')
+  expect(superReducedString('baab')).to.eq('Empty String')
 })
