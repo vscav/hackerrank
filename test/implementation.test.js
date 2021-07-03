@@ -28,7 +28,8 @@ import {
   encryption,
   kaprekarNumbers,
   camelcase,
-  superReducedString
+  superReducedString,
+  howManyGames
 } from '../src/implementation/implementation'
 
 import chai from 'chai'
@@ -273,4 +274,10 @@ test('Super reduced string', () => {
   expect(superReducedString('aaabccddd')).to.eq('abd')
   expect(superReducedString('aa')).to.eq('Empty String')
   expect(superReducedString('baab')).to.eq('Empty String')
+})
+
+test('Halloween Sale', () => {
+  expect(howManyGames).to.be.a('function')
+  expect(howManyGames(20, 3, 6, 80)).to.eq(6)
+  expect(howManyGames(20, 3, 6, 85)).to.eq(7)
 })
