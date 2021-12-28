@@ -29,7 +29,8 @@ import {
   kaprekarNumbers,
   camelcase,
   superReducedString,
-  howManyGames
+  howManyGames,
+  squares
 } from '../src/implementation/implementation'
 
 import chai from 'chai'
@@ -280,4 +281,13 @@ test('Halloween Sale', () => {
   expect(howManyGames).to.be.a('function')
   expect(howManyGames(20, 3, 6, 80)).to.eq(6)
   expect(howManyGames(20, 3, 6, 85)).to.eq(7)
+})
+
+test('Sherlock and Squares', () => {
+  expect(squares).to.be.a('function')
+  expect(squares(24, 49)).to.eq(3)
+  expect(squares(3, 9)).to.eq(2)
+  expect(squares(17, 24)).to.eq(0)
+  expect(squares(35, 70)).to.eq(3)
+  expect(squares(100, 1000)).to.eq(22)
 })
