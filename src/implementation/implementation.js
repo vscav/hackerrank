@@ -586,18 +586,42 @@ export const howManyGames = (p, d, m, s) => {
  * Problem link: https://www.hackerrank.com/challenges/sherlock-and-squares/problem
  */
 
- export const squares = (a, b) => {
-  let square = 0, i = 1, count = 0;
+export const squares = (a, b) => {
+  let square = 0
+  let i = 1
+  let count = 0
 
   while (square <= b) {
-      square = i * i;
+    square = i * i
 
-      if (square >= a && square <= b) {
-          count ++;
-      }
+    if (square >= a && square <= b) {
+      count++
+    }
 
-      i ++;
+    i++
   }
 
-  return count;
+  return count
+}
+
+/**
+ * Lisa's Workbook
+ * Problem link: https://www.hackerrank.com/challenges/lisa-workbook/problem
+ */
+
+export const workbook = (n, k, arr) => {
+  let specials = 0
+  let currentPage = 1
+  for (let i = 0; i < n; i++) {
+    const problems = Array.from({ length: arr[i] }, (_, i) => i + 1).reduce((result, _, index, array) => {
+      if (index % k === 0) result.push(array.slice(index, index + k))
+      return result
+    }, [])
+    for (const problemsSet of problems) {
+      problemsSet.includes(currentPage) && specials++
+      currentPage++
+    }
+  }
+
+  return specials
 }

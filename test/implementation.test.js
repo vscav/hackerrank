@@ -30,7 +30,8 @@ import {
   camelcase,
   superReducedString,
   howManyGames,
-  squares
+  squares,
+  workbook
 } from '../src/implementation/implementation'
 
 import chai from 'chai'
@@ -290,4 +291,10 @@ test('Sherlock and Squares', () => {
   expect(squares(17, 24)).to.eq(0)
   expect(squares(35, 70)).to.eq(3)
   expect(squares(100, 1000)).to.eq(22)
+})
+
+test('Lisa\'s Workbook', () => {
+  expect(workbook).to.be.a('function')
+  expect(workbook(5, 3, [4, 2, 6, 1, 10])).to.eq(4)
+  expect(workbook(10, 5, [3, 8, 15, 11, 14, 1, 9, 2, 24, 31])).to.eq(8)
 })
