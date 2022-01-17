@@ -31,7 +31,8 @@ import {
   superReducedString,
   howManyGames,
   squares,
-  workbook
+  workbook,
+  strangeCounter
 } from '../src/implementation/implementation'
 
 import chai from 'chai'
@@ -297,4 +298,10 @@ test('Lisa\'s Workbook', () => {
   expect(workbook).to.be.a('function')
   expect(workbook(5, 3, [4, 2, 6, 1, 10])).to.eq(4)
   expect(workbook(10, 5, [3, 8, 15, 11, 14, 1, 9, 2, 24, 31])).to.eq(8)
+})
+
+test('Strange Counter', () => {
+  expect(strangeCounter).to.be.a('function')
+  expect(strangeCounter(4)).to.eq(6)
+  expect(strangeCounter(17)).to.eq(5)
 })
